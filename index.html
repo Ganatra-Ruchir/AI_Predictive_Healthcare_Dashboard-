@@ -96,8 +96,8 @@
   .burger i{display:block; height:1.4px; background:currentColor;}
 
   /* overlay menu */
-  #overlay{position:fixed; inset:0; z-index:190; background:var(--paper-3); transform:translateY(-100%); transition:transform .5s cubic-bezier(.7,0,.2,1); display:flex; flex-direction:column; justify-content:center; padding:60px clamp(18px,6vw,80px);}
-  #overlay.open{transform:translateY(0);}
+  #overlay{position:fixed; inset:0; z-index:190; background:var(--paper-3); display:none; flex-direction:column; justify-content:center; padding:60px clamp(18px,6vw,80px); overflow-y:auto;}
+  #overlay.open{display:flex;}
   .ov-row{display:flex; align-items:baseline; gap:22px; padding:14px 0; border-bottom:1px solid var(--hair); text-decoration:none; color:var(--ink); font-family:var(--head); font-size:clamp(1.3rem,4vw,2.2rem);}
   .ov-i{font-family:var(--mono); font-size:0.8rem; color:var(--fg-faint); width:2ch;}
   .ov-row:hover{color:var(--accent);}
