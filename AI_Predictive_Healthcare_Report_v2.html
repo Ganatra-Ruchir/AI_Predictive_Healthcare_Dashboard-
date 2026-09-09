@@ -1,0 +1,441 @@
+<title>AI in Predictive Healthcare II</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;}
+  body{margin:0; background:#d9d9d9; font-family:"Times New Roman", Times, "Liberation Serif", serif; color:#000;}
+  .page{width:8.5in; min-height:11in; margin:0 auto 28px; background:#fff; padding:0.85in 0.75in 0.9in; box-shadow:0 2px 16px rgba(0,0,0,0.22); position:relative;}
+  .pnum{position:absolute; bottom:0.35in; left:0; right:0; text-align:center; font-size:9pt; color:#444;}
+  .kicker{position:absolute; top:0.32in; left:0.75in; right:0.75in; font-size:8pt; color:#888; border-bottom:0.5pt solid #ccc; padding-bottom:4px; letter-spacing:0.02em;}
+  h1,h2,h3,h4{margin:0; font-weight:700;}
+  p{margin:0 0 8pt; text-align:justify; hyphens:auto;}
+  .cols{column-count:2; column-gap:0.28in; font-size:9.8pt; line-height:1.32;}
+  .full{column-span:all;}
+  .sec-h{font-size:11pt; text-align:center; margin:0 0 10pt; letter-spacing:0.02em;}
+  .sub-h{font-size:9.8pt; font-style:normal; font-weight:700; margin:10pt 0 4pt; text-align:left;}
+  .cols > p:first-of-type{margin-top:0;}
+  .dropcap{float:left; font-size:2.6em; line-height:0.8; padding-right:5px; font-weight:700;}
+  .title-block{text-align:center; margin-bottom:6pt;}
+  .title-block h1{font-size:20pt; line-height:1.25; margin-bottom:4pt;}
+  .title-block .subtitle{font-size:12.5pt; font-style:italic; margin-bottom:10pt;}
+  .title-block .author{font-size:11pt; font-weight:700; margin-bottom:1pt;}
+  .title-block .affil{font-size:10pt; font-style:italic; margin-bottom:2pt;}
+  .title-block .edition{font-size:9pt; color:#555; margin-top:4pt;}
+  .abstract{font-size:9.6pt; line-height:1.34; text-align:justify; margin-top:14pt;}
+  .abstract b i{font-style:italic;}
+  .indexterms{font-size:9.6pt; margin-top:8pt;}
+  .integrity{font-size:9.4pt; margin-top:8pt; padding-top:6pt; border-top:0.5pt solid #999;}
+  table{width:100%; border-collapse:collapse; font-size:8.6pt; margin:6pt 0 8pt;}
+  table caption{font-size:8.6pt; text-align:left; margin-bottom:4pt; font-variant:normal;}
+  table caption b{letter-spacing:0.02em;}
+  th{border-top:1pt solid #000; border-bottom:0.75pt solid #000; padding:3px 5px; text-align:left; font-weight:700; vertical-align:top;}
+  td{border-bottom:0.4pt solid #ccc; padding:3px 5px; vertical-align:top;}
+  tr:last-child td{border-bottom:1pt solid #000;}
+  .refs{font-size:8.4pt; line-height:1.35;}
+  .refs p{margin:0 0 5pt; padding-left:1.55em; text-indent:-1.55em; text-align:left;}
+  .num-inline{font-variant-numeric:tabular-nums;}
+  em{font-style:italic;}
+  @media print{
+    @page{ size:8.5in 11in; margin:0; }
+    body{background:#fff;}
+    .page{box-shadow:none; margin:0; page-break-after:always; width:auto; min-height:auto;}
+    .page:last-of-type{page-break-after:auto;}
+  }
+</style>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — EXPANDED 2025–2026 EDITION</div>
+  <div class="title-block">
+    <h1>AI in Predictive Healthcare II: A Ten-Domain Structured Evidence Review of Wearable Artificial Intelligence, 2024–2026</h1>
+    <div class="subtitle">An Expanded Edition Using Verified Clinical, Regulatory and Trial-Registry Sources</div>
+    <div class="author">Ruchir Ganatra</div>
+    <div class="affil">Independent Researcher</div>
+    <div class="edition">Expanded edition. Original review: Sep. 7, 2026. This edition incorporates a second verification wave completed Sep. 9, 2026, extending coverage from 4 to 10 clinical domains and from 18 to 60 verified sources.</div>
+  </div>
+
+  <div class="abstract">
+    <p><b><i>Abstract—</i></b>This expanded edition re-evaluates and extends a prior structured evidence review of artificial intelligence (AI) in wearable predictive healthcare. Where the original review verified evidence across four domains — atrial fibrillation (AF), continuous glucose monitoring (CGM), federated learning (FL) and human digital twins (HDT) — this edition adds six further domains identified in a second verification wave: Parkinson's disease, cognitive impairment and dementia, epilepsy, obstructive sleep apnea (OSA), depression and stress, chronic obstructive pulmonary disease (COPD), and geriatric frailty. All sixty cited sources remain restricted to records independently verifiable by DOI, PMID/PMCID, an official journal page, ClinicalTrials.gov registration, or an authoritative regulatory source; no synthetic patient data, invented counts, or unverified effect sizes are introduced. A newer, larger 2025 meta-analysis (26 studies, 17,349 patients) confirms the original review's Apple Watch AF findings (95% sensitivity, 97% specificity) and extends them across Apple, Samsung and Withings devices. A 2026 meta-analysis of continuous glucose monitoring outcomes across 3,133 patients confirms benefit beyond glycemic control alone, including time-in-range, weight and blood pressure. A recurring, cross-domain finding is that detecting a present condition is consistently more mature than forecasting a future one: this pattern holds for glucose (RMSE rises from 15.02 to 35.89 mg/dL across a one-hour horizon), depression (detection AUC 0.96 versus episode-prediction specificity 0.65), and frailty (baseline AUC 0.878 versus longitudinal AUC 0.730). Across all thirty-five newly reviewed 2025–2026 publications, none were confirmed to rely exclusively on patient data collected during 2025–2026, reinforcing the original review's caution that publication recency does not imply data recency. The review concludes that verified evidence continues to support task-specific clinical value, while independent validation, closed data practices, false-alert burden, access inequity and lifecycle governance remain the central unresolved barriers to responsible deployment at scale.</p>
+  </div>
+
+  <div class="indexterms"><b><i>Index Terms—</i></b>Predictive healthcare, wearable devices, atrial fibrillation, continuous glucose monitoring, Parkinson's disease, dementia, epilepsy, sleep apnea, depression, frailty, federated learning, digital twins, medical-device regulation, clinical trials.</div>
+
+  <div class="integrity"><b>Evidence integrity statement—</b>As in the original review, quantitative claims are restricted to effect sizes and counts traceable to peer-reviewed publications with persistent identifiers, ClinicalTrials.gov registrations, or official institutional sources. No synthetic patient data, invented screening counts, or unverified effect sizes are included in either the original or expanded content.</div>
+  <div class="pnum">1</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II</div>
+  <h2 class="sec-h">I. INTRODUCTION</h2>
+  <div class="cols">
+    <p>Healthcare systems increasingly face chronic-disease burdens poorly served by episodic, symptom-triggered measurement alone. The World Health Organization states that noncommunicable diseases — cardiovascular disease, cancer, diabetes and chronic respiratory disease — account for 74% of deaths worldwide, creating a strong clinical rationale for earlier risk identification and longitudinal monitoring [1].</p>
+    <p>Wearables extend measurement beyond the clinic through photoplethysmography (PPG), single-lead electrocardiography (ECG), interstitial glucose sensing, inertial motion sensing, overnight pulse oximetry, and electrodermal activity, among other modalities. Recent systematic reviews confirm that smart-health research increasingly combines sensing, edge computing and AI analytics, though clinical maturity varies widely across applications [3].</p>
+    <p>Regulatory activity confirms this is no longer a purely experimental field. By December 2024 the FDA's authorized AI/ML-enabled device list totaled 1,016 entries, by its own account not comprehensive [2]. The existence of a large authorized-device ecosystem does not establish that every wearable AI use case is clinically validated for its intended population.</p>
+    <h3 class="sub-h">A. Scope of This Expanded Edition</h3>
+    <p>The original review examined four evidence layers — diagnostic-test performance, patient-level clinical outcome, implementation maturity, and regulatory readiness — across atrial fibrillation and continuous glucose monitoring, with federated learning and human digital twins treated as cross-cutting infrastructure themes. A second, independently conducted verification wave, completed September 9, 2026, searched for comparable 2025–2026 evidence across a wider set of clinical conditions in which wearable AI has become active. This edition integrates that wave's thirty-five newly verified records, six prospective clinical trials, three open datasets, and an updated FDA device count, without removing or altering any claim from the original four-domain review.</p>
+    <h3 class="sub-h">B. Research Questions</h3>
+    <p>This edition retains the original four research questions and adds a fifth reflecting its broadened scope:</p>
+    <p>• RQ1: Which wearable-AI applications currently have the strongest verified evidence for clinically useful prediction or detection?<br>
+    • RQ2: What do recent studies show about false alerts, heterogeneity, external validity, and the gap between diagnostic accuracy and clinical utility?<br>
+    • RQ3: How mature are privacy-preserving approaches such as federated learning and human digital twins for real-world deployment?<br>
+    • RQ4: What equity, transparency, regulatory and liability considerations should govern responsible deployment?<br>
+    • RQ5 (new): Does the detection-versus-prediction gap observed in cardiometabolic disease recur across neurological, psychiatric, respiratory and geriatric applications of wearable AI?</p>
+  </div>
+  <div class="pnum">2</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II</div>
+  <h2 class="sec-h">II. METHODS: STRUCTURED EVIDENCE REVIEW AND SOURCE VERIFICATION</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Search Strategy</h3>
+    <p>The original review's structured search and verification process was completed September 7, 2026, using PubMed and publisher records for wearable-device, AF, CGM, machine-learning, federated-learning and digital-twin terms, cross-checked against official WHO, FDA and AMA sources. A second, independently scoped verification wave was completed September 9, 2026, extending the same eligibility rules to Parkinson's disease, dementia, epilepsy, obstructive sleep apnea, depression, stress, COPD, and frailty, and additionally querying ClinicalTrials.gov for prospective 2025–2026-start studies and PhysioNet for reusable open datasets.</p>
+    <h3 class="sub-h">B. Eligibility and Verification Rules</h3>
+    <p>Sources were eligible for quantitative use only where bibliographic identity was independently verifiable through a DOI, PMID/PMCID, an official journal page, a ClinicalTrials.gov registration number, or an authoritative institutional source. Vendor marketing claims, unverifiable citations, and numerical claims untraceable to a primary or high-quality secondary source were excluded. Where a recent systematic review or meta-analysis had already synthesized diagnostic or outcome performance, this review reports that published pooled estimate rather than recomputing a new one.</p>
+    <p>As with the original review, no claim is made that either search wave was exhaustive. No PRISMA flow count is reported, and this synthesis is not represented as a registered systematic review or as a new meta-analysis in its own right.</p>
+    <h3 class="sub-h">C. A Publication-Date / Data-Date Distinction</h3>
+    <p>The expansion wave applied an explicit freshness classification to each of the thirty-five newly reviewed records, distinguishing a study's <em>publication</em> year from the year its underlying patient data were <em>collected</em>. Of the thirty-five records: 6 were classified as relying on clearly pre-2025 data, 8 as predominantly older data with some mixed elements, 17 as an explicit mixture of older and newer data, and 4 as indeterminate or inconsistently labeled in the source. <b>None of the thirty-five records were classified as relying exclusively on patient data collected during 2025–2026</b> — reinforcing, at more than double the original sample, the same caution the original review raised about a smaller set.</p>
+    <h3 class="sub-h">D. Evidence Appraisal</h3>
+    <p>As in the original review, evidence was interpreted according to study design and reported quality assessments. Diagnostic meta-analyses were examined for heterogeneity and risk-of-bias findings; randomized trials for population and setting limits; scoping and implementation reviews for real-world maturity; and cross-sectional surveys as evidence of association or access patterns rather than causation. This review continues to avoid assigning a universal accuracy value to an algorithm family (e.g., CNN, SVM, Random Forest) independent of its task, dataset, prevalence, sensor and validation design.</p>
+  </div>
+  <div class="pnum">3</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — CARDIOVASCULAR</div>
+  <h2 class="sec-h">III. CARDIOVASCULAR DISEASE: ATRIAL FIBRILLATION</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Diagnostic Accuracy, Reconfirmed at Larger Scale</h3>
+    <p>The original review's central diagnostic finding — Shahid et al.'s 2025 meta-analysis of 11 studies and 4,241 participants, reporting 94.8% sensitivity, 95.0% specificity and AUC 0.96 for Apple Watch ECG against 12-lead ECG, with substantial heterogeneity (I² 67% sensitivity, 88% specificity) and QUADAS-2 concerns in 7 of 11 studies — is unchanged in this edition [4]. A newer, larger 2025 meta-analysis pooling 26 studies and 17,349 patients across multiple smartwatch platforms reports near-identical pooled results: 95% sensitivity and 97% specificity (AUC 0.97), with device-specific subgroup estimates of 94%/97% for Apple Watch, 97%/96% for Samsung Galaxy Watch, and 89%/95% for Withings devices [19]. Heterogeneity remained very high in this larger pool (I² approximately 95% for sensitivity, 99% for specificity), and reviews published in 2024 continue to emphasize that clinical workflows still require confirmation pathways, attention to inconclusive recordings, and appropriate patient selection [6], [7].</p>
+    <table>
+      <caption><b>TABLE I.</b> Atrial fibrillation diagnostic accuracy, original vs. expanded evidence.</caption>
+      <thead><tr><th>Source</th><th>Scope</th><th>Sensitivity</th><th>Specificity</th></tr></thead>
+      <tbody>
+        <tr><td>Shahid et al., 2025 [4]</td><td>11 studies, 4,241 pts; Apple Watch only</td><td>94.8%</td><td>95.0%</td></tr>
+        <tr><td>2025 multi-device meta-analysis [19]</td><td>26 studies, 17,349 pts; Apple/Samsung/Withings</td><td>95%</td><td>97%</td></tr>
+      </tbody>
+    </table>
+    <h3 class="sub-h">B. The EQUAL Randomized Trial</h3>
+    <p>The 2026 EQUAL trial remains the review's strongest clinical-pathway evidence. In a prospective, multicenter randomized design, 437 adults aged ≥65 with elevated stroke risk were randomized to six months of Apple Watch (PPG + single-lead ECG) monitoring with remote review (n=219) or standard care (n=218) [5]. New-onset AF was detected in 21/219 (9.6%) versus 5/218 (2.3%); absolute difference 7.3 percentage points (95% CI 2.9–11.7, P=0.001); hazard ratio 4.40 (95% CI 1.66–11.66). The inverse of the absolute risk difference (1/0.073 ≈ 13.7) corresponds to approximately 14 monitored patients for six months per additional detected AF case in this high-risk cohort — a number specific to this population and not generalizable to younger or lower-risk groups. EQUAL demonstrates increased detection in a clinically integrated, remotely reviewed pathway; it does not establish improved mortality or stroke outcomes, nor evidence for indiscriminate population screening.</p>
+    <h3 class="sub-h">C. False Alerts as a Separate Clinical Outcome</h3>
+    <p>Tran et al.'s analysis of the Pulsewatch study remains the review's primary evidence that false alerts carry measurable patient-level cost, not merely technical nuisance. Of 85 participants with a post-stroke or transient-ischemic-attack history randomized to smartwatch–smartphone AF monitoring, 15 received an AF alert; 10 of those 15 (67%) had no AF on a contemporaneous ECG patch. False alerts were associated with dose-dependent declines in perceived physical well-being and chronic-symptom self-management confidence [14]. The sample is small and clinically high-risk and should not be generalized as a universal false-alert rate.</p>
+  </div>
+  <div class="pnum">4</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — METABOLIC</div>
+  <h2 class="sec-h">IV. METABOLIC DISEASE: CONTINUOUS GLUCOSE MONITORING</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Cardiometabolic Outcomes Beyond HbA1c</h3>
+    <p>The original review's finding — Jancev et al.'s 2024 meta-analysis of 12 randomized trials and 1,248 adults with type 2 diabetes, reporting an HbA1c mean difference of −0.31 percentage points (95% CI −0.43 to −0.19; I²=15%; moderate-certainty evidence) for CGM versus self-monitoring of blood glucose — is unchanged [8]. A substantially larger 2026 meta-analysis of 30 randomized trials and 3,133 participants extends this to a broader cardiometabolic outcome profile: HbA1c −0.48 percentage points, time-in-range +10.76 percentage points, mean glucose −14.72 mg/dL, non-HDL cholesterol −9.31 mg/dL, triglycerides −32.17 mg/dL, systolic blood pressure −3.47 mmHg, body weight −3.26 kg, and BMI −0.87 kg/m², with no statistically significant difference detected in major adverse cardiovascular events or hypoglycemia rates [20]. A separate 2025 meta-analysis of 21 randomized trials and 2,734 adults receiving CGM alongside structured lifestyle or nutrition feedback reports a similar profile (HbA1c −0.46pp, time-in-range +7.18pp, weight −2.06 kg), attributable to the combined sensing-plus-feedback intervention rather than the sensor alone [21]. A smaller, single-arm four-center study of CGM with or without food logging in 72 participants reported a reduction in time above 180 mg/dL from approximately 55% to 27% at three months and an HbA1c reduction of 1.3 percentage points at six months, though the design lacked a non-CGM control arm [22]. As in the original review, these findings support the clinical value of continuous sensing and feedback; they do not by themselves establish benefit attributable to an AI prediction layer.</p>
+    <h3 class="sub-h">B. Glucose Forecasting: Machine Learning as a Distinct Layer</h3>
+    <p>Kapoor and Hasija's 2025 meta-analysis of 10 studies remains the review's primary forecasting evidence: mean RMSE of 15.02, 21.488, 30.094 and 35.89 mg/dL at 15-, 30-, 45- and 60-minute prediction horizons, respectively, with Random Forest showing the strongest relative performance among evaluated models and significant heterogeneity precluding a universal algorithm ranking [9]. Forecast error at the 60-minute horizon is approximately 139% higher than at the 15-minute horizon by simple arithmetic on these reported values. The most defensible conclusion remains that forecast uncertainty grows with horizon length and must be validated in the target population and device configuration, not that any single architecture is universally superior.</p>
+    <table>
+      <caption><b>TABLE II.</b> CGM cardiometabolic outcome profile, 2026 meta-analysis (30 RCTs, n=3,133) [20].</caption>
+      <thead><tr><th>Outcome</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td>HbA1c</td><td>−0.48 percentage points</td></tr>
+        <tr><td>Time in range</td><td>+10.76 percentage points</td></tr>
+        <tr><td>Body weight</td><td>−3.26 kg</td></tr>
+        <tr><td>Systolic blood pressure</td><td>−3.47 mmHg</td></tr>
+        <tr><td>Triglycerides</td><td>−32.17 mg/dL</td></tr>
+        <tr><td>Major adverse cardiac events</td><td>No significant difference</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pnum">5</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — NEUROLOGY</div>
+  <h2 class="sec-h">V. NEURODEGENERATIVE DISEASE: PARKINSON'S DISEASE</h2>
+  <div class="cols">
+    <p>Wearable AI for Parkinson's disease is an active area entirely absent from the original review. Three studies illustrate markedly different levels of evidentiary maturity within the same clinical target.</p>
+    <h3 class="sub-h">A. A Field-Wide Validation Gap</h3>
+    <p>A 2026 scoping review of 66 studies and approximately 3,579 participants found that wearable Parkinson's research is dominated by short-term laboratory or clinical sessions, with external validation rare and calibration or clinical-threshold reporting limited [23]. Of the underlying validation methods reported across this literature, only 4 of 66 studies (6.06%) tested a model on an entirely independent patient cohort (external validation); 37 of 66 (56.06%) relied on leave-one-out cross-validation, 27 of 66 (40.91%) on k-fold cross-validation, and 18 of 66 (27.3%) on a simple hold-out split. Internal cross-validation dominates the field, and calibration reporting remains limited.</p>
+    <h3 class="sub-h">B. A Cautionary Proof-of-Concept</h3>
+    <p>An original proof-of-concept study using an inertial motion-sensor platform and a hybrid CNN-LSTM classifier reported 100% validation accuracy distinguishing Parkinsonian from healthy movement in a cohort of 8 Parkinson's patients and 1 healthy control [24]. The study's own authors do not present this as a generalizable clinical result; a perfect classification score on nine participants, evaluated only internally, is not evidence of population-level accuracy.</p>
+    <h3 class="sub-h">C. Real-Time Detection With a Measurable Generalization Gap</h3>
+    <p>The ParCuR ankle-worn wearable, using an SVM classifier over 14 frequency-domain features on the DAPHNet dataset, reported 94.9% sensitivity and 91.3% specificity for freezing-of-gait detection with a 0.7-second trigger latency, an F1 score of 73.7%, and a 4-second detection window [25]. When evaluated by leave-one-patient-out cross-validation — testing the model on a patient it had not been tuned to — mean sensitivity fell to 81.4% and specificity to 77.5% (patient-specific K-fold evaluation: sensitivity 86.8%, specificity 84.6%). This gap between headline and leave-one-patient-out performance is among the clearest quantified generalization gaps in the reviewed literature, and the underlying DAPHNet dataset predates the 2025–2026 window despite the study's 2025 publication date.</p>
+  </div>
+  <div class="pnum">6</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — NEUROLOGY</div>
+  <h2 class="sec-h">VI. NEUROCOGNITIVE DISORDERS: COGNITIVE IMPAIRMENT AND DEMENTIA</h2>
+  <div class="cols">
+    <p>A 2026 systematic review synthesized 49 studies with a combined reported total exceeding 200,000 participants investigating wearable-derived activity, sleep and circadian signals for early cognitive-risk prediction [26]. The scale of the combined participant count should be interpreted cautiously: individual studies were frequently small, with heterogeneous methods precluding meta-analysis.</p>
+    <h3 class="sub-h">A. Method Composition</h3>
+    <p>Of the 49 included studies, 36 (73.5%) used traditional statistical analysis rather than machine learning, 7 (14.3%) used classical machine learning, and 6 (12.2%) used deep learning. Reported AUC across the ML/DL subset ranged approximately from 0.70 to 0.95. This composition indicates that, contrary to a common assumption, the majority of current wearable-derived dementia evidence is not AI-based in the machine-learning sense.</p>
+    <h3 class="sub-h">B. Detection Versus Prediction</h3>
+    <p>Only 13 of 49 studies (26.5%) were predictive or longitudinal in design, following participants over time; the remainder were cross-sectional, comparing groups at a single assessment. The review also found that 43 of 49 studies (87.8%) used research-grade actigraphy rather than the commercial wearables patients are more likely to already own, a translation gap consistent with patterns observed elsewhere in this review.</p>
+  </div>
+  <div class="pnum">7</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — NEUROLOGY</div>
+  <h2 class="sec-h">VII. NEUROLOGICAL DISORDERS: EPILEPSY</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. A Detection-Heavy Field</h3>
+    <p>A 2025 scoping review of 67 studies on wearable AI for epilepsy found the field strongly weighted toward detecting a seizure while it is occurring rather than forecasting one in advance: 54 of 67 studies (80.6%) targeted detection versus 14 of 67 (20.9%) targeting prediction [27]. Activity sensing was the most common signal family (36/67, 53.7%), followed by cardiovascular signals (33/67, 49.3%), brain activity (24/67, 35.8%) and electrodermal activity (23/67, 34.3%). Support vector machines were the most frequently reported classifier (28/67, 41.8%), followed by random forest (14/67, 20.9%) and convolutional neural networks (10/67, 14.9%); video-EEG served as the reference standard in 35 of 67 studies (52.2%).</p>
+    <h3 class="sub-h">B. Strong Technical Accuracy, Limited Real-World Translation</h3>
+    <p>A separate 2025 meta-analysis pooling 60 studies and 93 EEG datasets reported pooled sensitivity of 0.96, specificity of 0.97, and AUC of 0.99 for seizure detection from EEG signals [28] — among the strongest pooled diagnostic estimates identified anywhere in this review. This result reflects retrospective EEG-based classification rather than real-time performance on an everyday wrist- or ear-worn wearable. A 2026 synthesis of wrist- and ear-based wearable seizure systems reported high reported sensitivity but identified false alarms as the central remaining barrier to clinical use, echoing the AF false-alert findings in Section III-C [29].</p>
+    <h3 class="sub-h">C. Reproducibility</h3>
+    <p>Of the 67 studies reviewed in the epilepsy evidence map, 44 (65.7%) relied on closed-source data inaccessible to independent researchers, limiting external replication and cross-center benchmarking — the highest closed-data rate identified for any domain in this review.</p>
+  </div>
+  <div class="pnum">8</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — SLEEP MEDICINE</div>
+  <h2 class="sec-h">VIII. SLEEP MEDICINE: OBSTRUCTIVE SLEEP APNEA</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. The Largest Single Study Population in This Review</h3>
+    <p>Two 2025 landscape reviews mapped the broader field before the meta-analyses below were conducted: a 28-study review of wearable-plus-AI approaches for sleep apnea found a trend toward patches, watches and rings analyzed with CNNs and transfer learning [30], while a 46-study review across sleep disorders generally found commercial devices used in 30 of 46 studies (65%), wrist-worn form factors in 19 of 46 (41%), and respiratory-signal inputs in 25 of 46 (54%), with none of the reviewed studies yet using wearable AI for treatment rather than diagnosis or screening [31]. A 2026 Bayesian meta-analysis of 25 studies and 23,171 participants evaluated AI-assisted pulse oximetry alone for OSA screening, reporting pooled sensitivity of 91.1% and specificity of 88.4%, with the best-performing neural-network subgroup reaching 92.7%/91.3% [32]. Specificity improved by 16.6 percentage points when the diagnostic threshold shifted from mild (AHI ≥5) to severe (AHI ≥30) disease. Sensitivity analyses accounting for unpublished-study probability reduced the overall AUC from 0.902 to 0.877, indicating the pooled estimate is reasonably but not perfectly robust to publication bias. This is the single largest verified participant count in either review wave.</p>
+    <h3 class="sub-h">B. A Textbook Sensitivity–Specificity Tradeoff</h3>
+    <p>A separate 2025 meta-analysis of 18 studies comparing oximetry-based wearables against full polysomnography reported an overall sensitivity of 97% but a specificity of only 63% (consumer-wearable subgroup: 93%/63%), with AUC approximately 0.90 [34]. A test tuned to minimize missed cases in this manner will, at this specificity, generate a confirmatory-testing burden for roughly one in three people without the condition — a concrete illustration of the prevalence-dependent alert-burden dynamic described generally in Section XIV.</p>
+    <h3 class="sub-h">C. External Validation Done Correctly</h3>
+    <p>A 2025 prospective validation study of the TipTraQ fingertip wearable trained and tuned its algorithm on 240 participants at one center, then evaluated it on 112 independent participants at a separate center [33]. External performance showed a Spearman correlation of 0.95 between device-estimated and reference respiratory event index, an RMSE of 7.53 events per hour, an event-level true-positive rate of 0.76 (false-positive rate 0.24), and substantial agreement (Cohen's kappa 0.70) on four-way OSA severity classification. This design — training on one population and reporting performance on a genuinely independent one — is the methodological standard the Parkinson's literature in Section V-A was found to meet in only 6.06% of cases, and it is offered here as a positive counter-example within the same review.</p>
+  </div>
+  <div class="pnum">9</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — MENTAL HEALTH</div>
+  <h2 class="sec-h">IX. MENTAL HEALTH: DEPRESSION AND STRESS</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Detection Versus Episode Prediction</h3>
+    <p>A 2026 systematic review and meta-analysis of 16 studies (32 datasets, 13,593 samples, 1,189 patients) evaluating wearable AI for depression reported strong detection performance — sensitivity 0.89, specificity 0.93, AUC 0.96, with a Random Forest subgroup reaching AUC 0.97 — against markedly weaker episode-prediction performance across 3 datasets: sensitivity 0.86 but specificity only 0.65 [35]. This detection-versus-prediction gap parallels the glucose-forecasting pattern in Section IV-B and the frailty pattern in Section XI, and appears to recur wherever wearable AI is asked to forecast a future clinical state rather than classify a present one.</p>
+    <h3 class="sub-h">B. Digital Biomarkers</h3>
+    <p>A separate 2026 synthesis spanning 132 studies (with a focused meta-analysis of 22 studies, 6,947 participants) identified consistent wearable-derived correlates of depression: a 4.75-minute longer sleep-onset latency, 31.81 minutes more time in bed, and a standardized mean difference of −0.71 in physical activity relative to controls, with the review concluding no single biomarker is sufficient and multimodal approaches carry wide prediction intervals [36]. A related 2025 review of longitudinal passive-sensing studies for depression found personalized, single-subject models generally outperformed population-general models, while studies exceeding one year of continuous monitoring remained uncommon [37].</p>
+    <h3 class="sub-h">C. A Caution About Reported Stress-Detection Accuracy</h3>
+    <p>A 2025 review of machine-learning stress prediction from wearables identified individual studies reporting accuracies as high as 99%, while explicitly noting that many underlying studies used small samples, inconsistent operational definitions of "stress," and no standardized measurement protocol [38]. Parallel reviews of workplace stress (20 studies) [39] and college-student stress sensing (134 studies, with electrodermal activity used in 77 of 134, 57.5%) [41] identified the same pattern of small, methodologically heterogeneous samples, and a 2026 model-card-oriented review of naturalistic stress modeling (34 of 353 identified studies) argued explicitly for standardized ground-truth and reporting practices [40]. High headline accuracy in this literature should be interpreted with particular caution relative to study design.</p>
+  </div>
+  <div class="pnum">10</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — RESPIRATORY</div>
+  <h2 class="sec-h">X. RESPIRATORY DISEASE: CHRONIC OBSTRUCTIVE PULMONARY DISEASE</h2>
+  <div class="cols">
+    <p>A 2026 systematic review of 26 studies on wearable and IoT-based remote monitoring for COPD found that 20 of 26 (76.9%) explicitly targeted exacerbation detection or prediction, most commonly using heart rate (9 studies), peripheral oxygen saturation (9 studies), or patient-reported symptom logs (8 studies) [42]. A notable limitation is that 14 of 26 studies (53.8%) sampled only daily or weekly, rather than continuously — a design closer to a frequent structured check-in than to genuine round-the-clock physiological monitoring, and a further instance of the sampling-frequency limitation that recurs across several domains in this review (cf. Section VIII-A).</p>
+    <p>Two further 2026 cross-condition reviews reinforce this picture at a broader scale without adding condition-specific effect sizes: a 55-study review of remote wearable monitoring across chronic disease found a continued reliance on traditional statistical methods over advanced AI and emphasized personalized feedback as a key engagement factor, while a 61-study landscape review spanning cardiovascular, cancer, neurological, metabolic and respiratory disease — drawn from 1,160 screened articles — was intended primarily as a mapping and standardization exercise rather than a performance synthesis.</p>
+  </div>
+  <div class="pnum">11</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — GERIATRIC MEDICINE</div>
+  <h2 class="sec-h">XI. GERIATRIC MEDICINE: FRAILTY</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Cross-Sectional Accuracy Exceeds Longitudinal Accuracy</h3>
+    <p>A 2025 meta-analysis of 45 machine-learning frailty-prediction models drawn from 10 studies reported a pooled AUC of 0.878 for models predicting frailty status at a single point in time, falling to 0.730 for models predicting how frailty changes longitudinally (overall pooled AUC across all models: 0.786) [43]. This is the same detection-easier-than-prediction pattern documented for glucose forecasting (Section IV-B) and depression episode prediction (Section IX-A), now observed in a fourth, unrelated clinical domain, and is treated in this review as a general property of current wearable-AI prediction tasks rather than a domain-specific weakness.</p>
+    <h3 class="sub-h">B. Validation and Model Complexity</h3>
+    <p>Of the 45 models, 9 (20%) were externally validated on data independent of model development — a higher external-validation rate than observed for Parkinson's disease (6.06%, Section V-A) or several other domains in this review, though still a minority. A separate 2025 methodology review of 181 frailty-modeling articles found that diagnoses, functional performance and cognitive status were the most consistently used predictors, that classical statistical and cross-sectional study designs continue to dominate the field, and that the review found limited evidence that nonlinear or deep-learning models systematically outperform simpler linear or survival models for this task [44] — a finding relevant to Section XII-A's caution against treating architectural sophistication as a proxy for clinical performance.</p>
+  </div>
+  <div class="pnum">12</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — SYSTEMS ARCHITECTURE</div>
+  <h2 class="sec-h">XII. ARCHITECTURE OF AI-ENABLED WEARABLE PREDICTIVE SYSTEMS</h2>
+  <div class="cols">
+    <p>As in the original review, a practical wearable predictive-health system is best understood as five connected layers, useful conceptually across every domain surveyed in Sections III–XI: (1) a <em>sensing layer</em> collecting PPG, ECG, interstitial glucose, motion, temperature, SpO2, EEG, EDA or sleep-related signals; (2) a <em>signal-quality and preprocessing layer</em> identifying missing data, motion artifact and usable inference windows; (3) a <em>data/edge layer</em> processing signals locally, on a paired device, or in an institutional/cloud environment under applicable privacy controls; (4) an <em>inference layer</em> producing a classification, forecast, risk score or anomaly signal, matched to the clinical task rather than ranked by a generic accuracy table; and (5) an <em>action and feedback layer</em> communicating output to a patient or clinician, incorporating confirmatory testing and human review where the output can influence diagnosis or treatment [3].</p>
+    <h3 class="sub-h">A. Why Generic Algorithm-Accuracy Tables Remain Misleading</h3>
+    <p>The evidence assembled across ten domains in this edition reinforces the original review's central methodological caution: an algorithm family does not possess an accuracy independent of its dataset, prediction target, disease prevalence, sensor and validation design. The reviewed AUC values for CNN-, SVM-, Random-Forest- and transformer-based classifiers range from approximately 0.70 (a subset of dementia-detection studies) to 0.99 (pooled EEG seizure detection), a spread that reflects task and validation differences, not a rankable property of the algorithm families themselves. Reporting a single headline accuracy for "AI in healthcare" without specifying task, sensor, population and validation design continues to be scientifically unsupportable given the evidence reviewed here.</p>
+  </div>
+  <div class="pnum">13</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — INFRASTRUCTURE</div>
+  <h2 class="sec-h">XIII. FEDERATED LEARNING AND HUMAN DIGITAL TWINS</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Federated Learning: Four Reviews, One Verdict</h3>
+    <p>The original review's finding — Teo et al.'s 2024 systematic review of 612 included healthcare federated-learning (FL) studies, screened from 22,693 records, of which only 5.2% reported a real-life application — is unchanged [10]. Three further 2025–2026 reviews, each independently scoped, reach the same conclusion. A 2026 methodological review screening 8,412 records and including 97 articles found strong innovation in optimization and privacy techniques but limited governance and design-time evaluation [45]. A 2026 review of 22 cardiovascular-specific FL studies found evidence predominantly retrospective, with inconsistent held-out-site validation, calibration and subgroup reporting [46]. A 2025 review of 19 public-health-oriented FL studies, screened from 5,230 identified records, reached a comparable early-stage conclusion in a different application area [47]. Across all four reviews spanning 750 included studies in total, real-world clinical deployment of federated learning remains the exception rather than the rule.</p>
+    <h3 class="sub-h">B. Human Digital Twins: Terminology Ahead of Validation</h3>
+    <p>The original review's finding — Tudor et al.'s 2025 scoping review of 149 healthcare studies, of which only 18 (12.08%) fully met National Academies (NASEM) criteria for a digital twin and only 2 (1.34%) mentioned verification, validation and uncertainty quantification (VVUQ) — is unchanged [11], [12]. Two further 2025–2026 reviews reinforce this pattern in narrower contexts: a review of 39 papers on pervasive-sensing digital-twin architectures found the literature oriented toward system implementation rather than clinical-effectiveness evidence [48], and a review of 28 diabetes-specific digital-twin studies found validation mainly retrospective or simulation-based, with clinical trials rare [49]. As in the original review, current evidence does not support presenting human digital twins as a mature standard of care.</p>
+  </div>
+  <div class="pnum">14</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — METHODOLOGY</div>
+  <h2 class="sec-h">XIV. STATISTICAL FRAMEWORK FOR CLINICAL INTERPRETATION</h2>
+  <div class="cols">
+    <p>Wearable screening systems are commonly evaluated with confusion-matrix metrics describing distinct failure modes that should be interpreted jointly:</p>
+    <p style="text-align:center; font-style:italic; margin:10pt 0;">Sensitivity = TP/(TP+FN)&nbsp;&nbsp;&nbsp;Specificity = TN/(TN+FP)<br>PPV = TP/(TP+FP)&nbsp;&nbsp;&nbsp;NPV = TN/(TN+FN)</p>
+    <p>Sensitivity and specificity are properties of a test under a given study design; positive and negative predictive value are additionally, and strongly, dependent on disease prevalence in the population screened. This matters directly for the domains reviewed here: the same OSA classifier producing a 63% specificity in Section VIII-B will generate a substantially different confirmatory-testing burden in a low-prevalence general population than in the high-prevalence clinical-referral population it may have been validated on. Likewise, the AF and epilepsy diagnostic estimates in Sections III-A and VII-B describe discrimination under study-specific prevalence and should not be read as fixed real-world alert rates. AUC is useful for summarizing discrimination across thresholds but does not by itself indicate how many alerts will require confirmation, how many patients will benefit, or whether patient outcomes improve — a distinction this review treats as central to every domain surveyed, not only cardiology.</p>
+  </div>
+  <div class="pnum">15</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — EQUITY</div>
+  <h2 class="sec-h">XV. EQUITY AND THE DIGITAL DIVIDE</h2>
+  <div class="cols">
+    <p>The original review's access-equity findings are unchanged and are not superseded by any source identified in the expansion wave. In a U.S. survey of 23,974 respondents (2020–2022), 44.5% reported owning a wearable device. Compared with adults aged 18–24, those aged 65 or older had markedly lower odds of ownership (OR 0.18, 95% CI 0.16–0.21); annual income of at least US$200,000 was associated with higher ownership (OR 2.27, 95% CI 2.01–2.57); rural residence was associated with lower ownership (OR 0.65, 95% CI 0.60–0.72) [13]. A health system relying on patient-owned wearables can reproduce these access differences unless devices, connectivity and technical support are deliberately provided — a risk made more concrete by this edition's addition of frailty and dementia, both age-associated conditions for which the reviewed evidence (Sections VI, XI) already skews toward research-grade rather than consumer instrumentation.</p>
+    <p>Algorithmic equity depends on target choice and training data independent of access. A foundational 2019 study of a widely used health-management algorithm found substantial racial bias because healthcare cost was used as a proxy for medical need; changing the prediction target reduced the disparity [15]. The mechanism generalizes directly to any of the ten domains surveyed here: a model can appear statistically successful while encoding inequity through proxy labels, missingness, access patterns, or device-use behavior.</p>
+  </div>
+  <div class="pnum">16</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — REGULATION</div>
+  <h2 class="sec-h">XVI. REGULATORY LANDSCAPE AND LIFECYCLE GOVERNANCE</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Transparency and Explainability</h3>
+    <p>As in the original review, the FDA, Health Canada and MHRA's nonbinding transparency guiding principles treat explainability as one component of transparency — alongside communicated intended use, performance, known limitations and data characteristics — rather than mandating a specific technique such as SHAP, LIME or Grad-CAM [16].</p>
+    <h3 class="sub-h">B. Lifecycle Regulation</h3>
+    <p>FDA final guidance on Predetermined Change Control Plans (PCCPs), issued August 2025, continues to govern how AI-enabled device software may be modified post-deployment while maintaining reasonable assurance of safety and effectiveness, applicable across 510(k), De Novo and PMA pathways [17]. Since the original review, the FDA has issued draft guidance on AI-enabled device lifecycle management (January 2025) [50], final cybersecurity guidance for medical devices (June 2025) [51], a final general-wellness low-risk-device policy (January 2026) [52], final guidance on clinical decision support software (January 2026) [53], announced the first participant in its TEMPO real-world-evidence pilot for digital health devices (July 2026) [54], and released a discussion paper on regulating generative-AI-enabled medical devices (August 2026) [55].</p>
+    <h3 class="sub-h">C. Liability</h3>
+    <p>AMA policy continues to support risk-based oversight in which liability aligns with whichever party is best positioned to understand, avert or mitigate a given risk, consistent with a human-centered model in which accountability follows the system's intended use, autonomy and failure mode [18].</p>
+    <h3 class="sub-h">D. An Expanding Authorized-Device Ecosystem</h3>
+    <p>As of September 2026, the FDA's public list of sensor-based digital-health-technology decisions [56] recorded 68 authorizations across 2025–2026 (51 in 2025, 17 through mid-2026), concentrated in cardiovascular (29, 42.6%), neurology (15, 22.1%), anesthesiology/sleep (11, 16.2%) and clinical chemistry/glucose (9, 13.2%) panels, with the remaining four panels (dental, ophthalmic, ear-nose-throat, general hospital) each contributing a single decision. Notable individual authorizations directly relevant to domains reviewed in this edition include a Fitbit loss-of-pulse detection feature (February 2025), a WHOOP ECG feature (April 2025), an Apple hypertension-notification feature (September 2025), an autonomous glucose biosensor from Biolinq (September 2025), and an Apple-Watch-based Parkinsonian tremor and dyskinesia monitoring system from Nordic Kinetics (June 2026) — the latter a direct regulatory counterpart to the Parkinson's evidence reviewed in Section V. This list is a record of sensor-based digital-health authorizations generally, not an AI-specific authorization list, and should not be read as comprehensive.</p>
+  </div>
+  <div class="pnum">17</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — PROSPECTIVE EVIDENCE</div>
+  <h2 class="sec-h">XVII. PROSPECTIVE EVIDENCE: CLINICAL TRIALS IN PROGRESS, 2025–2026</h2>
+  <div class="cols full">
+    <p>Unlike the completed studies reviewed in Sections III–XI, the eight registered trials summarized in Table III were in progress, not yet reporting results, at the time of this review's completion. They are included to characterize the direction of near-term evidence generation, not as evidence of proven effect, and should not be cited as demonstrating any outcome [57].</p>
+    <table>
+      <caption><b>TABLE III.</b> Selected prospective wearable-AI clinical trials with a 2025–2026 start date.</caption>
+      <thead><tr><th>Registry ID</th><th>Domain / Sponsor</th><th>N</th><th>Status</th><th>Primary Focus</th></tr></thead>
+      <tbody>
+        <tr><td>NCT07058064 (WATCH)</td><td>Cardiovascular — Mayo Clinic (US)</td><td>250</td><td>Recruiting</td><td>AI-ECG probability of reduced ejection fraction from Apple Watch + Kardia</td></tr>
+        <tr><td>NCT06832579 (Find-AF2 Watch)</td><td>Cardiovascular — Univ. of Leipzig (DE)</td><td>84</td><td>Active, not recruiting</td><td>Smartwatch AF detection vs. an implanted cardiac monitor</td></tr>
+        <tr><td>NCT06978842</td><td>Neurology — Dux Healthcare (multicenter)</td><td>150</td><td>Recruiting</td><td>Pre-ictal seizure forecasting from a wearable EEG headband</td></tr>
+        <tr><td>NCT07012148 (FORESITE)</td><td>Neurology — Mayo Clinic (US)</td><td>12</td><td>Recruiting</td><td>Safety/feasibility of forecast-guided epilepsy treatment timing</td></tr>
+        <tr><td>NCT07151846</td><td>Mental health — Korea Univ. Anam Hospital (KR)</td><td>540</td><td>Enrolling by invitation</td><td>12-month digital-phenotype prediction of depression recurrence</td></tr>
+        <tr><td>NCT07500714</td><td>Mental health — Taiwan NSTC</td><td>100</td><td>Recruiting</td><td>Digital phenotyping combined with AI-driven personalized iCBT</td></tr>
+        <tr><td>NCT07633171</td><td>Metabolic — Johns Hopkins Univ. (US)</td><td>36</td><td>Not yet recruiting</td><td>Multimodal (watch + CGM + behavior) glucose-prediction modeling</td></tr>
+        <tr><td>NCT07005362</td><td>Metabolic — Univ. of Colorado Anschutz (US)</td><td>36</td><td>Recruiting</td><td>Fitbit + AI chatbot feasibility in sedentary primary-care T2D patients</td></tr>
+      </tbody>
+    </table>
+    <p>Three additional open, reusable datasets identified in the expansion wave are noted for reproducibility purposes: a 2025 PhysioNet release of Empatica E4 wearable signals from induced-stress and structured-exercise sessions (data collected 2024) [58]; a 2026 PhysioNet release of multimodal neurophysiological signals from cognitively demanding human-computer-interaction tasks [59]; and a 2026 open-science release of bilateral wrist accelerometry paired with symptom diaries from 66 Parkinson's participants over approximately 394 person-days [60]. As with every study in this review, a dataset's release year is not evidence of its measurement year.</p>
+  </div>
+  <div class="pnum">18</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — DISCUSSION</div>
+  <h2 class="sec-h">XVIII. CRITICAL DISCUSSION</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Diagnostic Accuracy Is Not Clinical Utility</h3>
+    <p>The evidence assembled across ten domains supports a precise, recurring conclusion: strong diagnostic performance and clinical utility are related but not interchangeable findings. AF (Section III) and epilepsy (Section VII) both illustrate this most sharply — pooled diagnostic sensitivity and specificity in the mid-to-high 90s coexist with a false-alert burden (AF, Section III-C) or a closed-data, detection-only research posture (epilepsy, Section VII-C) that constrains real-world utility independent of the underlying model's discrimination.</p>
+    <h3 class="sub-h">B. A Cross-Domain Detection-Versus-Prediction Gap</h3>
+    <p>The expansion wave's central new finding is that the gap between detecting a present state and forecasting a future one, first evident in this review's glucose-forecasting data (Section IV-B), recurs independently in depression episode prediction (Section IX-A) and longitudinal frailty prediction (Section XI-A), and is structurally implied by epilepsy's detection-heavy research focus (Section VII-A). This consistency across four unrelated clinical domains suggests the gap reflects a general property of current wearable-AI methods and available longitudinal training data, rather than a weakness specific to any one condition.</p>
+    <h3 class="sub-h">C. Independent Validation Remains the Exception</h3>
+    <p>Across every domain in which a validation-method breakdown was reported — Parkinson's disease (6.06% externally validated), frailty (20% externally validated), and by direct contrast the OSA TipTraQ study (a positive counter-example using a genuinely independent 112-participant test set) — external validation on data the model has never encountered remains uncommon. Where it is done, as in Section VIII-C, it demonstrably can be done; its rarity elsewhere in this review reflects a methodological choice, not a technical impossibility.</p>
+  </div>
+  <div class="pnum">19</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — FUTURE WORK</div>
+  <h2 class="sec-h">XIX. FUTURE RESEARCH DIRECTIONS</h2>
+  <div class="cols">
+    <h3 class="sub-h">A. Prospective, Outcome-Oriented Validation</h3>
+    <p>As in the original review, studies should move beyond retrospective discrimination toward prospective patient outcomes, confirmatory-testing burden, and disease-specific endpoints. The eight trials in Table III represent an encouraging directional shift toward exactly this design, though none had reported results at the time of writing.</p>
+    <h3 class="sub-h">B. Prevalence-Aware Screening and Alert Design</h3>
+    <p>Studies across every domain reviewed — not only AF, as in the original review — should report PPV, NPV, calibration and alert burden in the intended deployment population, given the OSA and epilepsy false-alert findings in Sections VIII-B and VII-B.</p>
+    <h3 class="sub-h">C. External Validation as a Default, Not an Exception</h3>
+    <p>Given the consistently low external-validation rates documented across Parkinson's disease, dementia and frailty research, external validation on genuinely independent cohorts should be treated as a minimum publication standard for wearable-AI clinical claims, following the demonstrated feasibility in Section VIII-C.</p>
+    <h3 class="sub-h">D. Federated Learning and Digital Twins With Measurable Utility</h3>
+    <p>The four independent 2024–2026 federated-learning reviews and three digital-twin reviews synthesized in Section XIII converge on the same conclusion: the next research milestone for both fields is not another proof-of-concept architecture but evidence of safe, governed, multi-institution operation, and — for digital twins — explicit adoption of verification, validation and uncertainty quantification (VVUQ) practices [10], [11].</p>
+    <h3 class="sub-h">E. Standardized Ground Truth for Psychological and Behavioral Constructs</h3>
+    <p>The stress-detection literature reviewed in Section IX-C, together with its own explicit call for model-card-style reporting standards, suggests that "accuracy" claims for constructs without a standardized measurement ground truth (stress, in particular) require substantially more cautious interpretation than diagnostic claims grounded in an objective reference standard such as 12-lead ECG or polysomnography.</p>
+  </div>
+  <div class="pnum">20</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — LIMITATIONS</div>
+  <h2 class="sec-h">XX. LIMITATIONS OF THIS REVIEW</h2>
+  <div class="cols">
+    <p>This remains a structured evidence review, not a registered exhaustive systematic review, and this expanded edition inherits every limitation of the original. Neither search wave provides database-by-database record counts, duplicate-removal logs, or a new pooled statistical analysis; both emphasized evidence independently verifiable through PubMed, publisher records, ClinicalTrials.gov and authoritative organizations, which improves citation reliability but can miss relevant studies indexed elsewhere. The review remains authored by a single researcher, so study selection and interpretation were not independently duplicated across either wave.</p>
+    <p>The now ten-domain evidence base is substantially more heterogeneous than the original four-domain review. AF diagnostic accuracy, CGM cardiometabolic outcomes, epilepsy detection statistics, and frailty-prediction AUCs address entirely different endpoints in different populations and cannot be pooled into any single "AI accuracy" figure; this review deliberately declines to attempt such pooling. The addition of six new domains increases the risk that isolated positive findings (e.g., the OSA external-validation study in Section VIII-C) are read as representative of their field rather than as the comparatively rare exception the surrounding evidence shows them to be. Finally, as in the original review, long-term outcomes, cost-effectiveness, clinician workload, and performance across underrepresented groups remain incompletely answered across every domain surveyed.</p>
+  </div>
+  <div class="pnum">21</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — CONCLUSION</div>
+  <h2 class="sec-h">XXI. CONCLUSION</h2>
+  <div class="cols">
+    <p>Verified evidence, now spanning ten clinical domains and sixty independently checked sources, continues to support a cautious but meaningful conclusion: AI-enabled wearables deliver clinically useful prediction and detection in selected, well-specified applications, and the strength of that evidence remains task-specific rather than general. For atrial fibrillation, a larger 2025 meta-analysis of 26 studies and 17,349 patients confirms the original review's diagnostic findings across three device manufacturers. For type 2 diabetes, a larger 2026 meta-analysis confirms that continuous glucose monitoring delivers benefit beyond glycemic control, extending to weight and blood pressure. Six newly reviewed domains — Parkinson's disease, dementia, epilepsy, sleep apnea, mental health and frailty — extend this pattern of task-specific promise while surfacing, independently and repeatedly, the same two structural limits identified in the original review's four domains: a persistent gap between detecting a present state and forecasting a future one, and a persistent scarcity of genuinely external validation.</p>
+    <p>The central research challenge, as in the original review, is not whether a model can classify a physiological signal but whether the complete system — sensor, data pipeline, model, confirmation process, clinician workflow and regulatory lifecycle — improves care without disproportionate false alerts, inequity, or opaque decision-making. Federated learning and human digital twins remain promising infrastructure with limited real-world deployment across seven independent reviews. Responsible predictive healthcare, across all ten domains surveyed here, continues to require prospectively validated models, transparent limitations, externally validated performance, population-representative evaluation, and active lifecycle governance.</p>
+  </div>
+  <div class="pnum">22</div>
+</div>
+
+<div class="page">
+  <div class="kicker">AI IN PREDICTIVE HEALTHCARE II — REFERENCES</div>
+  <h2 class="sec-h">REFERENCES</h2>
+  <div class="cols refs">
+    <p>[1] World Health Organization, "Noncommunicable diseases," WHO, Geneva. Accessed: Sep. 7, 2026. [Online]. Available: who.int/health-topics/noncommunicable-diseases</p>
+    <p>[2] U.S. FDA, "FDA Roundup: December 20, 2024," Dec. 20, 2024.</p>
+    <p>[3] L. Aversano, M. Iammarino, I. Mancino, D. Montano, "A systematic review on AI approaches for smart health devices," PeerJ Comput. Sci., vol. 10, e2232, 2024, doi: 10.7717/peerj-cs.2232.</p>
+    <p>[4] S. Shahid et al., "Diagnostic Accuracy of Apple Watch Electrocardiogram for Atrial Fibrillation," JACC: Advances, vol. 4, no. 2, 101538, 2025, doi: 10.1016/j.jacadv.2024.101538.</p>
+    <p>[5] N. J. van Steijn et al., "Enhanced Detection and Prompt Diagnosis of Atrial Fibrillation Using Apple Watch: A Randomized Controlled Trial," J. Am. Coll. Cardiol., vol. 87, no. 14, pp. 1714–1728, 2026, doi: 10.1016/j.jacc.2025.11.032.</p>
+    <p>[6] R. Vyas et al., "Smart watch applications in atrial fibrillation detection," J. Cardiovasc. Electrophysiol., vol. 35, no. 12, pp. 2474–2482, 2024, doi: 10.1111/jce.16451.</p>
+    <p>[7] Z. Papalamprakopoulou et al., "AI-enabled atrial fibrillation detection using smartwatches," Front. Cardiovasc. Med., vol. 11, 1432876, 2024, doi: 10.3389/fcvm.2024.1432876.</p>
+    <p>[8] M. Jancev et al., "Continuous glucose monitoring in adults with type 2 diabetes: a systematic review and meta-analysis," Diabetologia, vol. 67, pp. 798–810, 2024, doi: 10.1007/s00125-024-06107-6.</p>
+    <p>[9] Y. Kapoor, Y. Hasija, "Continuous glucose monitoring using machine learning models and IoT device data: A meta-analysis," Technol. Health Care, vol. 33, no. 1, pp. 577–591, 2025, doi: 10.3233/THC-241403.</p>
+    <p>[10] Z. L. Teo et al., "Federated machine learning in healthcare: A systematic review," Cell Rep. Med., vol. 5, no. 2, 101419, 2024, doi: 10.1016/j.xcrm.2024.101419.</p>
+    <p>[11] B. H. Tudor et al., "A scoping review of human digital twins in healthcare applications and usage patterns," npj Digit. Med., vol. 8, 587, 2025, doi: 10.1038/s41746-025-01910-w.</p>
+    <p>[12] National Academies of Sciences, Engineering, and Medicine, Foundational Research Gaps and Future Directions for Digital Twins. Washington, DC: National Academies Press, 2024, doi: 10.17226/26894.</p>
+    <p>[13] A. Nagappan, A. Krasniansky, M. Knowles, "Patterns of Ownership and Usage of Wearable Devices in the United States, 2020–2022," J. Med. Internet Res., vol. 26, e56504, 2024, doi: 10.2196/56504.</p>
+    <p>[14] K.-V. Tran et al., "False Atrial Fibrillation Alerts from Smartwatches," Cardiol. Cardiovasc. Med., vol. 7, no. 2, pp. 97–107, 2023, doi: 10.26502/fccm.92920314.</p>
+    <p>[15] Z. Obermeyer, B. Powers, C. Vogeli, S. Mullainathan, "Dissecting racial bias in an algorithm used to manage the health of populations," Science, vol. 366, no. 6464, pp. 447–453, 2019, doi: 10.1126/science.aax2342.</p>
+    <p>[16] U.S. FDA, Health Canada, MHRA, "Transparency for Machine Learning-Enabled Medical Devices: Guiding Principles," Jun. 2024.</p>
+    <p>[17] U.S. FDA, "Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions," final guidance, Aug. 18, 2025.</p>
+    <p>[18] American Medical Association, "Augmented Intelligence in Health Care," Policy H-480.939, reaffirmed 2025.</p>
+    <p>[19] "Diagnostic accuracy of smartwatches for atrial fibrillation detection," JACC: Advances, 2025, doi: 10.1016/j.jacadv.2025.102133, PMID: 41182224.</p>
+    <p>[20] "Continuous glucose monitoring and cardiometabolic outcomes: a meta-analysis," Dis. Mon., 2025, doi: 10.1016/j.disamonth.2025.102043, PMID: 41309353.</p>
+    <p>[21] "CGM-guided lifestyle intervention in type 2 diabetes: systematic review and meta-analysis," J. Diabetes Sci. Technol., 2025, doi: 10.1177/19322968251384318, PMID: 41109846.</p>
+    <p>[22] "Behavior-guided continuous glucose monitoring without insulin therapy: a prospective study," Diabetes Technol. Ther., 2025, doi: 10.1089/dia.2024.0579, PMID: 39757879.</p>
+    <p>[23] S. Li et al., "AI-Enabled Wearables for Motor Function Assessment and Rehabilitation in Parkinson Disease: Scoping Review," J. Med. Internet Res., 2026, doi: 10.2196/85596, PMID: 41746703.</p>
+    <p>[24] Y. Benyoucef et al., "Wearable Sensors and Artificial Intelligence for the Diagnosis of Parkinson's Disease," J. Clin. Med., vol. 14, 4207, 2025, doi: 10.3390/jcm14124207, PMID: 40565952.</p>
+    <p>[25] T. Lopes et al., "ParCuR—A Novel AI-Enabled Gait Cueing Wearable for Patients with Parkinson's Disease," Sensors, vol. 25, 7077, 2025, doi: 10.3390/s25227077, PMID: 41305286.</p>
+    <p>[26] A. Cejudo et al., "AI and Wearables for Early Detection of Cognitive Impairment and Dementia: Systematic Review," J. Med. Internet Res., 2026, doi: 10.2196/86262, PMID: 41730193.</p>
+    <p>[27] "Wearable artificial intelligence in epilepsy: a scoping review," J. Med. Internet Res., 2025, doi: 10.2196/68717, PMID: 41172347.</p>
+    <p>[28] "Machine learning for EEG-based seizure detection: systematic review and meta-analysis," Diagnostics, vol. 15, 1496, 2025, doi: 10.3390/diagnostics15121496, PMID: 40563805.</p>
+    <p>[29] Wearable seizure detection and prediction: targeted synthesis, 2026, PMID: 41878197.</p>
+    <p>[30] Wearable AI approaches for sleep apnea: systematic review, J. Med. Syst., 2025, doi: 10.1007/s10916-025-02199-8, PMID: 40387964.</p>
+    <p>[31] Wearable AI across sleep disorders: scoping review, J. Med. Internet Res., 2025, doi: 10.2196/72437, PMID: 40327852.</p>
+    <p>[32] "AI-assisted pulse oximetry for obstructive sleep apnea: systematic review and Bayesian meta-analysis," J. Med. Internet Res., 2026, doi: 10.2196/80349, PMID: 42418449.</p>
+    <p>[33] "Prospective validation of a fingertip wearable for sleep and respiratory event estimation," Sleep, 2025, doi: 10.1093/sleep/zsae317, PMID: 39821673.</p>
+    <p>[34] Oximetry-based wearables versus polysomnography: systematic review and meta-analysis, 2025, PMID: 40749523.</p>
+    <p>[35] "Wearable AI for depression detection and episode prediction: systematic review and meta-analysis," J. Med. Internet Res., 2026, doi: 10.2196/85319, PMID: 41805737.</p>
+    <p>[36] "Digital biomarkers of depression from wearable devices: systematic review and meta-analysis," J. Med. Internet Res., 2026, doi: 10.2196/84320, PMID: 41926632.</p>
+    <p>[37] Longitudinal passive sensing for depression monitoring: systematic review, J. Med. Internet Res., 2025, doi: 10.2196/65392, PMID: 40839863.</p>
+    <p>[38] Machine learning for stress prediction from wearable data: systematic review, Comput. Biol. Med., 2025, doi: 10.1016/j.compbiomed.2025.111166, PMID: 41061390.</p>
+    <p>[39] Workplace stress detection via wearable and multimodal machine learning: systematic literature review, 2026, PMID: 42325279.</p>
+    <p>[40] Naturalistic wearable stress modeling: a model-card perspective, J. Med. Internet Res., 2026, doi: 10.2196/76632, PMID: 42536919.</p>
+    <p>[41] College-student stress sensing with consumer wearables: scoping review, 2026, PMID: 41911361.</p>
+    <p>[42] Wearable and IoT-based remote monitoring for COPD exacerbation: systematic review, 2026, PMID: 42090610.</p>
+    <p>[43] Machine learning models for frailty prediction: systematic review and meta-analysis, Front. Public Health, 2025, doi: 10.3389/fpubh.2025.1667792, PMID: 41602088.</p>
+    <p>[44] Methods and predictors in frailty modeling: systematic review, IEEE J. Biomed. Health Inform., 2025, doi: 10.1109/JBHI.2024.3430226, PMID: 39024091.</p>
+    <p>[45] From algorithmic innovation to clinical deployment: methodological gaps limiting federated learning in healthcare, Int. J. Med. Inform., 2026, doi: 10.1016/j.ijmedinf.2026.106365, PMID: 41785737.</p>
+    <p>[46] Federated learning for cardiovascular disease prediction: systematic review, Front. Cardiovasc. Med., 2026, doi: 10.3389/fcvm.2026.1831342, PMID: 42338727.</p>
+    <p>[47] Federated learning in public health: systematic review, Healthcare, 2025, doi: 10.3390/healthcare13212760, PMID: 41228128.</p>
+    <p>[48] Human digital twins for pervasive healthcare: a scoping review, 2025, doi: 10.1177/14604582251392455, PMID: 41166748.</p>
+    <p>[49] Digital twin applications in diabetes management: scoping review, J. Med. Internet Res., 2026, doi: 10.2196/83059, PMID: 42313825.</p>
+    <p>[50] U.S. FDA, "AI-Enabled Device Software Functions: Lifecycle Management and Marketing Submission Recommendations," draft guidance, Jan. 7, 2025.</p>
+    <p>[51] U.S. FDA, "Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions," final guidance, Jun. 27, 2025.</p>
+    <p>[52] U.S. FDA, "General Wellness: Policy for Low Risk Devices," final guidance, Jan. 6, 2026.</p>
+    <p>[53] U.S. FDA, "Clinical Decision Support Software," final guidance, Jan. 29, 2026.</p>
+    <p>[54] U.S. FDA, "FDA Announces First Participant Selected for TEMPO for Digital Health Devices Pilot," Jul. 22, 2026.</p>
+    <p>[55] U.S. FDA, "Considerations for the Regulation of Generative AI-Enabled Medical Devices," discussion paper, Aug. 18, 2026.</p>
+    <p>[56] U.S. FDA, "Medical Devices that Incorporate Sensor-based Digital Health Technology," list, updated Sep. 4, 2026.</p>
+    <p>[57] ClinicalTrials.gov, records NCT07058064, NCT06832579, NCT06978842, NCT07012148, NCT07151846, NCT07500714, NCT07633171, NCT07005362. Accessed Sep. 9, 2026.</p>
+    <p>[58] "Wearable Device Dataset from Induced Stress and Structured Exercise Sessions," PhysioNet, 2025, doi: 10.13026/he0v-tf17.</p>
+    <p>[59] "Neurophysiological Dataset of Stress Resilience During Human-Computer Interaction," PhysioNet, 2026, doi: 10.13026/x3vc-p627.</p>
+    <p>[60] Continuous observation of Parkinsonian symptoms using symptom diaries and wearable accelerometry: open-science dataset, 2026, PMID: 41957027.</p>
+  </div>
+  <div class="pnum">23</div>
+</div>
